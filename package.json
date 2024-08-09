@@ -1,0 +1,24 @@
+{
+    "name": "better-node-print",
+    "version": "1.0.0",
+    "description": "Better and Colorful Print Messages for Node.js",
+    "keywords": [
+      "print",
+      "node",
+      "log"
+    ],
+    "main": "index.js",
+    "exports": {
+      ".": {
+        "require": "./index.js"
+      },
+      "./package.json": "./package.json"
+    },
+    "engines": {
+      "node": ">=10.0.0"
+    },
+    "files": [
+      "index.js"
+    ]
+  }
+  
