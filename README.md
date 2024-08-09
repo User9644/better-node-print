@@ -1,4 +1,5 @@
 # better-node-print
+[![Node.js Package](https://github.com/User9644/better-node-print/actions/workflows/npm-publish.yml/badge.svg?branch=main)](https://github.com/User9644/better-node-print/actions/workflows/npm-publish.yml)
 A Node.js package to make prettier console.log() messages.
 
 ## Table of Content
