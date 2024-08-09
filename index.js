@@ -1,4 +1,4 @@
-class Prints {
+class exportClass {
     /**
      * Prints a colored message to the console.
      * @param {*} data Anything that's prinatable.
@@ -52,4 +52,4 @@ class Prints {
     }
 }
 
-module.exports = Prints;
+module.exports = exportClass;
