@@ -16,7 +16,7 @@
     "bugs": {
 		"url": "https://github.com/User9644/better-node-print/issues"
 	},
-    "homepage": "https://github.com/inspect-js/available-typed-arrays#readme",
+    "homepage": "https://github.com/User9644/better-node-print#readme",
     "main": "index.js",
     "exports": {
       ".": {
