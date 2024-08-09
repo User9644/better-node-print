@@ -2,13 +2,13 @@
 A Node.js package to make prettier console.log() messages.
 
 ## Table of Content
-- [1. Installing](#installing)
-- [2. Example](#example)
+- [Installing](#installing)
+- [Example](#example)
 
-## 1. Installing
+## Installing
 ```npm install better-node-print```
 
-## 2. Example
+## Example
 ```js
 const { print, printc } = require('better-node-print');
 
