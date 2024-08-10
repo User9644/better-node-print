@@ -2,8 +2,8 @@
     "name": "better-node-print",
     "version": "1.0.1",
     "description": "Better and Colorful Print Messages for Node.js",
-    "author": "Finlay Faßbender",
     "license": "MIT",
+    "author": "Finlay Faßbender",
     "repository": {
 		"type": "git",
 		"url": "git+https://github.com/User9644/better-node-print.git"
