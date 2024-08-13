@@ -1,5 +1,5 @@
 # better-node-print
-[![Node.js Package](https://github.com/User9644/better-node-print/actions/workflows/npm-publish.yml/badge.svg?branch=main)](https://github.com/User9644/better-node-print/actions/workflows/npm-publish.yml)
+[![Version npm](https://img.shields.io/npm/v/better-node-print.svg?logo=npm)](https://www.npmjs.com/package/better-node-print)
 
 A Node.js package to make prettier console.log() messages.
 
