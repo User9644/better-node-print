@@ -1,5 +1,6 @@
 # better-node-print
 [![Version npm](https://img.shields.io/npm/v/better-node-print.svg?logo=npm)](https://www.npmjs.com/package/better-node-print)
+[![Downloads npm](https://img.shields.io/npm/d18m/better-node-print.svg?logo=npm)](https://www.npmjs.com/package/better-node-print)
 
 A Node.js package to make prettier console.log() messages.
 
