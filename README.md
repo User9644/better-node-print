@@ -13,13 +13,14 @@ A Node.js package to make prettier console.log() messages.
 
 ## Example
 ```js
-const { print, printc } = require('better-node-print');
+const { print, C, CB, R, printc } = require('better-node-print');
 
-print("Hello World.", "yellow", "blue");
-// Yellow Text, Blue Background
+print(C.yellow, "Hello", R, CB.red, " World!", R);
+// 'Hello': Yellow Text, ' World!': Red Background
 
-print("Hello World.", "red");
-// Red Text, Normal Background
+// C -> Text Color, CB -> Background Color, R -> Reset Colors
+print(`${C.yellow}, "Hello", ${R+CB.red}, " World!", ${R}`);
+// 'Hello': Yellow Text, ' World!': Red Background
 
 print([
   {text: "Hel", color: "yellow"},
