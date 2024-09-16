@@ -13,6 +13,7 @@ A Node.js package to make prettier console.log() messages.
 
 ## Example
 ```js
+// Code
 const { print, C, CB, R, printc } = require('better-node-print');
 
 print(C.yellow, "Hello", R, CB.red, " World!", R);
