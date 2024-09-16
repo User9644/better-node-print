@@ -1,55 +1,69 @@
-class exportClass {
-    static C = class {
-        static black = "\x1b[30m";
-        static red = "\x1b[31m";
-        static green = "\x1b[32m";
-        static yellow = "\x1b[33m";
-        static blue = "\x1b[34m";
-        static magenta = "\x1b[35m";
-        static cyan = "\x1b[36m";
-        static white = "\x1b[37m";
-        static gray = "\x1b[90m";
+const http = require('http');
+class HTTPServer {
+
+    static Page = class {
+        url;
+        content;
+        encoding;
+        contentType;
+        constructor(url, content, encoding, contentType) {
+            this.url = url;
+            this.content = content;
+            this.encoding = encoding;
+            this.contentType = contentType;
+        }
     }
-    static CB = class {
-        static black = "\x1b[40m";
-        static red = "\x1b[41m";
-        static green = "\x1b[42m";
-        static yellow = "\x1b[43m";
-        static blue = "\x1b[44m";
-        static magenta = "\x1b[45m";
-        static cyan = "\x1b[46m";
-        static white = "\x1b[47m";
-        static gray = "\x1b[100m";
-    }
-    static R = "\x1b[0m";
-    static print = (...data) => console.log(data.join(""));
+
+    #server;
+    #port;
+    #hostname;
+    #serverPages = [];
     /**
-     * Prints a colored message to the console.
-     * @param {Array} data e.g. [{text: "abc: "}, {text: "xyz", color: "yellow", bgColor: "blue"}]
+     *
      */
-    static printc = function (data) {
-        const colorCodes = {
-            black: 30,
-            red: 31,
-            green: 32,
-            yellow: 33,
-            blue: 34,
-            magenta: 35,
-            cyan: 36,
-            gray: 90
-        };
+    constructor(hostname = "localhost", port = 80, cors = '*') {
 
-        let logString = "";
+        this.#hostname = hostname;
+        this.#port = port;
 
-        data.forEach(e => {
-            const colorCode = colorCodes[e.color] || 37;
-            const bgColor = (colorCodes[e.bgColor] || -10) + 10;
+        this.#server = http.createServer(async (req, res) => {
+            res.setHeader('Access-Control-Allow-Origin', cors);
 
-            logString += `\x1b[${bgColor}m\x1b[${colorCode}m${e.text}\x1b[0m`;
+            for (const page of this.#serverPages) {
+                if (page.url == req.url) {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', page.contentType);
+                    res.end(page.content, page.encoding);
+
+                    return;
+                }
+            }
+
+            res.statusCode = 404;
+
+            res.setHeader('Content-Type', "text/plain");
+            res.end("404: Not Found", 'base64');
         });
-
-        console.log(logString);
     }
+
+    start = function (func = () => console.log(`Server started on ${this.#hostname}:${this.#port}/`)) {
+        this.#server.listen(this.#port, this.#hostname, func);
+    }
+
+    /**
+     * 
+     * @param {String} content 
+     * @param {String} encoding base64, utf-8, ...
+     * @param {String} contentType
+     */
+    addPage = function (urls, content, encoding = 'utf-8', contentType = 'text/html') {
+        for (const url of urls)
+            this.#serverPages.push(new HTTPServer.Page(url, content, encoding, contentType));
+    }
+
+    //    addAPI = function () {
+    //        this.addPage(content)
+    //    }
 }
 
-module.exports = exportClass;
+module.exports = HTTPServer;

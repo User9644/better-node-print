@@ -1,27 +1,23 @@
 {
-  "name": "better-node-print",
-  "version": "1.1.0",
-  "description": "Better and Colorful Print Messages for Node.js",
+  "name": "easier-http-server",
+  "version": "1.0.0",
+  "description": "Easier HTTP Server",
   "license": "MIT",
   "author": "User 9644",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/User9644/better-node-print.git"
+    "url": "git+https://github.com/User9644/easier-http-server.git"
   },
   "keywords": [
-    "print",
-    "node",
-    "log",
-    "color",
-    "console",
-    "console.log()",
+    "http",
+    "server",
     "nodejs",
     "easy"
   ],
   "bugs": {
-    "url": "https://github.com/User9644/better-node-print/issues"
+    "url": "https://github.com/User9644/easier-http-server/issues"
   },
-  "homepage": "https://github.com/User9644/better-node-print#readme",
+  "homepage": "https://github.com/User9644/easier-http-server#readme",
   "main": "index.js",
   "exports": {
     ".": {
